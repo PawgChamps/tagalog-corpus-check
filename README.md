@@ -11,9 +11,9 @@ Files (in `Project TGL to PRT-BR/Scripts/unverified_shards/corpus_check/`):
 Run on a free runner (GitHub Actions, public repository) or any machine with network:
 ```bash
 pip install datasets
-python3 count_corpus.py --dataset allenai/c4 --config tl            # mC4 Tagalog, public, ~3 GB of text
+python3 count_corpus.py --dataset allenai/c4 --config fil            # mC4 Tagalog, public, ~3 GB of text
 # optional second pass, needs HF_TOKEN with access to the gated corpus:
-python3 count_corpus.py --dataset oscar-corpus/OSCAR-2301 --config tl --out counts_oscar.tsv
+python3 count_corpus.py --dataset oscar-corpus/OSCAR-2301 --config fil --out counts_oscar.tsv
 ```
 Deliver `counts.tsv` (and `counts_oscar.tsv`) back into the same folder; nothing else changes. Do not install anything
 on the dictionary machine; the counting runs only in the cloud.

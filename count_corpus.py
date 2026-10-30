@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Count the words of words.tsv in a large Tagalog web corpus, streamed from Hugging Face (no download to disk):
-    python3 count_corpus.py --dataset allenai/c4 --config tl [--max-docs N] [--out counts.tsv]     (mC4 Tagalog, public)
-    python3 count_corpus.py --dataset oscar-corpus/OSCAR-2301 --config tl                          (needs HF_TOKEN)
+    python3 count_corpus.py --dataset allenai/c4 --config fil [--max-docs N] [--out counts.tsv]     (mC4 Tagalog, public)
+    python3 count_corpus.py --dataset oscar-corpus/OSCAR-2301 --config fil                          (needs HF_TOKEN)
 Whole-word, accent-blind, case-blind matches (hyphens kept: "sul-ol" is one token; a phrase of 2-3 words is matched as
 a sequence). Writes counts.tsv: key, occurrences, documents, and the total documents and tokens seen. Resumable by
 --skip-docs. Needs `pip install datasets`. On a GitHub Actions runner mC4 tl (about 3 GB of text) streams in roughly

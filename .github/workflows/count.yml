@@ -1,5 +1,8 @@
 name: count words in mC4 Tagalog
 on:
+  push:
+    branches: [main]
+    paths: [count_corpus.py, words.tsv, .github/workflows/count.yml]
   workflow_dispatch:
     inputs:
       max_docs:
@@ -21,8 +24,8 @@ jobs:
       - name: count
         run: |
           ARGS=""
-          if [ -n "${{ github.event.inputs.max_docs }}" ]; then ARGS="--max-docs ${{ github.event.inputs.max_docs }}"; fi
-          python3 count_corpus.py --dataset allenai/c4 --config tl --out counts.tsv $ARGS
+          if [ -n "${{ github.event.inputs.max_docs || '' }}" ]; then ARGS="--max-docs ${{ github.event.inputs.max_docs }}"; fi
+          python3 count_corpus.py --dataset allenai/c4 --config fil --out counts.tsv $ARGS
           tail -3 counts.tsv
       - uses: actions/upload-artifact@v4
         with:
